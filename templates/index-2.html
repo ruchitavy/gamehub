@@ -58,7 +58,8 @@
                                 <li>
                                     <div class="header-top-mail">
                                         <p>
-                                            <span>|</span><i class="far fa-envelope"></i><a href="mailto:ruchitavy@gmail.com">ruchitavy@gmail.com</a>
+                                            <span>|</span><i class="far fa-envelope"></i><a
+                                                href="mailto:ruchitavy@gmail.com">ruchitavy@gmail.com</a>
                                         </p>
                                     </div>
                                 </li>
@@ -76,7 +77,8 @@
                     <div class="main-menu menu-style-two" style="padding-top: 0px;">
                         <nav style="align-items: top !important;">
                             <div class="logo">
-                                <div class="featured-game-icon"><img src="static/img/icon/featured_game_icon.png" alt=""></div>
+                                <div class="featured-game-icon"><img src="static/img/icon/featured_game_icon.png"
+                                                                     alt=""></div>
                                 <!-- <a href="index-2.html"><span style="color:white; font-size: x-large">GameHub</span></a> -->
                             </div>
                             <div id="mobile-menu" class="navbar-wrap d-none d-lg-flex">
@@ -84,9 +86,13 @@
                                     <li class="show"><a href="#">Home</a></li>
                                     <!-- <li><a href="#">Favorites</a></li> -->
                                     <li><a href="feedback">Feedback</a></li>
- <!-- LOGIN -->
+                                    <!-- LOGIN -->
                                     <li class="header-search">
-                                        <a href="login" ><i class="fas fa-user"></i></a>
+                                        {% if name|length > 0 %}
+                                        <a href="logout"><i class="fas fa-backward"></i></a>
+                                        {% else %}
+                                        <a href="login"><i class="fas fa-user"></i></a>
+                                        {% endif %}
                                     </li>
                                 </ul>
                             </div>
@@ -124,7 +130,8 @@
                             <div class="slider-content">
                                 <h2 data-animation="fadeInUp" data-delay=".4s"></h2>
                                 <p data-animation="fadeInUp" data-delay=".6s"></p>
-                                <a href="games/TypingGame" target="_blank" class="btn btn-style-two" data-animation="fadeInUp" data-delay=".8s">PLAY NOW</a>
+                                <a href="games/TypingGame" target="_blank" class="btn btn-style-two"
+                                   data-animation="fadeInUp" data-delay=".8s">PLAY NOW</a>
                             </div>
                         </div>
                     </div>
@@ -133,16 +140,19 @@
                     <img src="static/img/slider/slider_img01.png" alt=""></div>
                 <div class="slider-img slider-img2" data-animation="slideInLeftS" data-delay=".6s">
                     <img src="static/img/slider/slider_img02.png" alt=""></div>
-                <div class="slider-circle-shape"><img src="static/img/slider/slider_circle.png" alt="" class="rotateme"></div>
+                <div class="slider-circle-shape"><img src="static/img/slider/slider_circle.png" alt="" class="rotateme">
+                </div>
             </div>
-            <div class="single-slider slider-bg slider-style-two" style="background-image: url(img/slider/slider_bg.jpg);">
+            <div class="single-slider slider-bg slider-style-two"
+                 style="background-image: url(img/slider/slider_bg.jpg);">
                 <div class="container-fluid container-full-padding">
                     <div class="row">
                         <div class="col-xl-6 col-lg-7 col-md-11">
                             <div class="slider-content">
                                 <h2 data-animation="fadeInUp" data-delay=".4s"></h2>
                                 <p data-animation="fadeInUp" data-delay=".6s"></p>
-                                <a href="games/BoxCollider" target="_blank" class="btn btn-style-two" data-animation="fadeInUp" data-delay=".8s">PLAY NOW</a>
+                                <a href="games/BoxCollider" target="_blank" class="btn btn-style-two"
+                                   data-animation="fadeInUp" data-delay=".8s">PLAY NOW</a>
                             </div>
                         </div>
                     </div>
@@ -151,7 +161,8 @@
                     <img src="static/img/slider/slider_img01.png" alt=""></div>
                 <div class="slider-img slider-img2" data-animation="slideInLeftS" data-delay=".6s">
                     <img src="static/img/slider/slider_img02.png" alt=""></div>
-                <div class="slider-circle-shape"><img src="static/img/slider/slider_circle.png" alt="" class="rotateme"></div>
+                <div class="slider-circle-shape"><img src="static/img/slider/slider_circle.png" alt="" class="rotateme">
+                </div>
             </div>
         </div>
     </section>
@@ -176,7 +187,8 @@
                             <div class="released-game-item">
                                 <div class="released-game-item-bg"></div>
                                 <div class="released-game-img">
-                                    <img src="static/img/images/released_game_img01.png" alt="" style="border-radius: 50px;">
+                                    <img src="static/img/images/released_game_img01.png" alt=""
+                                         style="border-radius: 50px;">
                                 </div>
                                 <div class="released-game-content">
                                     <div class="released-game-rating">
@@ -205,7 +217,8 @@
                             <div class="released-game-item">
                                 <div class="released-game-item-bg"></div>
                                 <div class="released-game-img">
-                                    <img src="static/img/images/released_game_img02.png" alt=""    style="border-radius: 50px;">
+                                    <img src="static/img/images/released_game_img02.png" alt=""
+                                         style="border-radius: 50px;">
                                 </div>
                                 <div class="released-game-content">
                                     <div class="released-game-rating">
@@ -221,13 +234,14 @@
                                     <h4>Brain Dots</h4>
                                     <div class="released-game-list mb-15">
                                         <ul>
-                                            <li><span  style="color: #b8b8b8;">All you need to do 
-is to make the two balls bump by Drawing Random lines and shapes. Flexible thinking is going to become the key to victory. </span></li>
+                                            <li><span style="color: #b8b8b8;">All you need to do
+is to make the two balls bump by Drawing Random lines and shapes. Flexible thinking is going to become the key to victory. </span>
+                                            </li>
 
                                         </ul>
                                     </div>
                                     <p></p>
-                                    <a href="games/BrainDots"  target="_blank" class="btn btn-style-two">play now</a>
+                                    <a href="games/BrainDots" target="_blank" class="btn btn-style-two">play now</a>
                                 </div>
                             </div>
                         </div>
@@ -235,7 +249,8 @@ is to make the two balls bump by Drawing Random lines and shapes. Flexible think
                             <div class="released-game-item">
                                 <div class="released-game-item-bg"></div>
                                 <div class="released-game-img">
-                                    <img src="static/img/images/released_game_img03.png" alt=""    style="border-radius: 50px;">
+                                    <img src="static/img/images/released_game_img03.png" alt=""
+                                         style="border-radius: 50px;">
                                 </div>
                                 <div class="released-game-content">
                                     <div class="released-game-rating">
@@ -251,13 +266,15 @@ is to make the two balls bump by Drawing Random lines and shapes. Flexible think
                                     <h4>Balloon Monster</h4>
                                     <div class="released-game-list mb-15">
                                         <ul>
-                                            <li><span  style="color: #b8b8b8;"> Protect the Balloon from the Monsters. Using your mouse simply
-                                            move the balloon around so that it doesn't bump into the Monsters.</span></li>
+                                            <li><span style="color: #b8b8b8;"> Protect the Balloon from the Monsters. Using your mouse simply
+                                            move the balloon around so that it doesn't bump into the Monsters.</span>
+                                            </li>
 
                                         </ul>
                                     </div>
                                     <p></p>
-                                    <a href="games/BalloonMonster"  target="_blank" class="btn btn-style-two">play now</a>
+                                    <a href="games/BalloonMonster" target="_blank" class="btn btn-style-two">play
+                                        now</a>
                                 </div>
                             </div>
                         </div>
@@ -265,7 +282,8 @@ is to make the two balls bump by Drawing Random lines and shapes. Flexible think
                             <div class="released-game-item">
                                 <div class="released-game-item-bg"></div>
                                 <div class="released-game-img">
-                                    <img src="static/img/images/released_game_img04.png" alt=""    style="border-radius: 50px;">
+                                    <img src="static/img/images/released_game_img04.png" alt=""
+                                         style="border-radius: 50px;">
                                 </div>
                                 <div class="released-game-content">
                                     <div class="released-game-rating">
@@ -281,12 +299,13 @@ is to make the two balls bump by Drawing Random lines and shapes. Flexible think
                                     <h4>Box Collider</h4>
                                     <div class="released-game-list mb-15">
                                         <ul>
-                                            <li><span  style="color: #b8b8b8;"> Help the box reach the end of the level by avoiding any collision. </span></li>
+                                            <li><span style="color: #b8b8b8;"> Help the box reach the end of the level by avoiding any collision. </span>
+                                            </li>
 
                                         </ul>
                                     </div>
                                     <p></p>
-                                    <a href="games/BoxCollider"  target="_blank" class="btn btn-style-two">play now</a>
+                                    <a href="games/BoxCollider" target="_blank" class="btn btn-style-two">play now</a>
                                 </div>
                             </div>
                         </div>
@@ -501,6 +520,11 @@ is to make the two balls bump by Drawing Random lines and shapes. Flexible think
                             <img src="static/img/icon/cta_icon.png" alt="">
                         </div>
                         <div class="section-title title-style-three white-title mb-50">
+                            {% if name|length > 0 %}
+                            <h2>Hello {{ name }}, </h2>
+                            {% else %}
+                            <h2>Login and</h2>
+                            {% endif %}
                             <h2>Tell us how you like the <span>Games</span></h2>
                             <p></p>
                         </div>
