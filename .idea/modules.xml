@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/fy-project.iml" filepath="$PROJECT_DIR$/fy-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/gamehub.iml" filepath="$PROJECT_DIR$/.idea/gamehub.iml" />
     </modules>
   </component>
 </project>

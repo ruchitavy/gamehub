@@ -1,5 +1,5 @@
 from flask import Flask, render_template, send_from_directory
-from flask_login import login_required
+from flask_login import login_required, LoginManager
 
 app = Flask(__name__, static_url_path='/static')
 
@@ -20,7 +20,6 @@ def signup():
 
 
 @app.route('/feedback')
-@login_required
 def feedback():
     return render_template('Feedback.html')
 
