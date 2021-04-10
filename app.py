@@ -30,6 +30,13 @@ class User(UserMixin, db.Model):
     name = db.Column(db.String(1000))
 
 
+class Feedback(db.Model):
+    game_id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, primary_key=True)
+    feedback = db.Column(db.String(1000))
+    rating = db.Column(db.Integer)
+
+
 @app.route('/signup', methods=['POST'])
 def signup_post():
     email = request.form.get('email')
@@ -62,6 +69,23 @@ def login_post():
 
     login_user(user)
     return redirect(url_for('home'))
+
+
+@app.route('/feedback', methods=['POST'])
+def feedback_post():
+    if current_user is None or not hasattr(current_user, 'name'):
+        return redirect(url_for('login', error='Login to give feedback'))
+
+    game_id = request.form.get('id')
+    feedback_text = request.form.get('feedback')
+    user_id = current_user.id
+    rating = 0
+
+    new_feedback = Feedback(game_id=game_id, user_id=user_id, feedback=feedback_text, rating=rating)
+    db.session.add(new_feedback)
+    db.session.commit()
+
+    return redirect(url_for('feedback'))
 
 
 @app.route('/')
@@ -98,10 +122,23 @@ def signup():
 
 @app.route('/feedback')
 def feedback():
-    if current_user is not None and hasattr(current_user, 'name'):
-        return render_template('Feedback.html')
+    if current_user is None or not hasattr(current_user, 'name'):
+        return redirect(url_for('login', error='Login to give feedback'))
 
-    return redirect(url_for('login', error='Login to give feedback'))
+    feedbacks = Feedback.query.all()
+
+    details = []
+
+    for f in feedbacks:
+        print(f.game_id, f.user_id, f.feedback)
+        details.append({
+            'user': User.query.filter_by(id=f.user_id).first().name,
+            'game': f.game_id,
+            'link': f.game_id.replace(' ', ''),
+            'feedback': f.feedback
+        })
+
+    return render_template('Feedback.html', feedbacks=reversed(details))
 
 
 @app.route('/games/<game>')
