@@ -99,8 +99,8 @@ function mainSlider() {
 		dots: false,
 		fade: true,
 		arrows: true,
-		prevArrow: '<button type="button" class="slick-prev"><img src="img/icon/arrow_left.png" alt=""></button>',
-		nextArrow: '<button type="button" class="slick-next"><img src="img/icon/arrow_right.png" alt=""></button>',
+		prevArrow: '<button type="button" class="slick-prev"><img src="static/img/icon/arrow_left.png" alt=""></button>',
+		nextArrow: '<button type="button" class="slick-next"><img src="static/img/icon/arrow_right.png" alt=""></button>',
 		responsive: [
 			{ breakpoint: 1200, settings: { dots: false, arrows: false } }
 		]
