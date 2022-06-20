@@ -133,7 +133,7 @@
 
                                 <div class="container" style="margin-left: 120px;">
                                     <h1>Feedback</h1>
-
+                                    <p style="color:red;">{{error}}</p>
 
                                     <label style=" color: #ffffff;"><strong style="margin-left: 5px;">Choose a
                                         Game:</strong>
@@ -191,20 +191,20 @@
                         </div>
                         <div class="featured-game-content">
                             <h4><a href="games/{{feedback['link']}}">{{ feedback['game'] }}</a></h4>
-                            <h6>{{ feedback['user'] }}</h6>
+                            <h6>by {{ feedback['user'] }}</h6>
                             <!--<div class="released-rating">-->
                                 <!--<i class="fas fa-star"></i>-->
                                 <!--<i class="fas fa-star"></i>-->
                                 <!--<i class="fas fa-star"></i>-->
                                 <!--<i class="fas fa-star"></i>-->
                             <!--</div>-->
-                            <div class="featured-game-meta">
-                                <span>{{ feedback['feedback'] }}</span>
+                            <div class="featured-game-meta" style="font-size: medium;">
+                                <span >{{ feedback['feedback'] }}</span>
                             </div>
                         </div>
                         <div class="featured-game-content featured-game-overlay-content">
                             <div class="featured-game-icon"><img src="img/icon/featured_game_icon.png" alt=""></div>
-                            <h4><a href="games/{{feedback['link']}}">Play <span>now</span></a></h4>
+                            <h4><a href="games/{{feedback['link']}}" target="_blank">Play Now</span></a></h4>
 
                         </div>
                     </div>

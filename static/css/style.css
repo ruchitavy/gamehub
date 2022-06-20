@@ -2324,7 +2324,7 @@ ul.minicart .cart-price .new {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(233, 163, 1, 0.749);
+	background-color: #d498df;
 	transition: .3s linear;
 	opacity: 0;
 }
@@ -2350,7 +2350,7 @@ ul.minicart .cart-price .new {
 }
 .featured-game-content h4 span,
 .featured-game-meta i {
-	color: #e9a301;
+	color: #d392e9;
 }
 .featured-game-content h4 a:hover {
 	color: #fff;

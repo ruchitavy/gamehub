@@ -76,10 +76,16 @@ def feedback_post():
     if current_user is None or not hasattr(current_user, 'name'):
         return redirect(url_for('login', error='Login to give feedback'))
 
+
     game_id = request.form.get('id')
     feedback_text = request.form.get('feedback')
     user_id = current_user.id
     rating = 0
+
+    old_feedback_exists = Feedback.query.filter_by(game_id=game_id, user_id=user_id).count() > 0
+
+    if old_feedback_exists:
+        return redirect(url_for('feedback', error='Feedback already given.'))
 
     new_feedback = Feedback(game_id=game_id, user_id=user_id, feedback=feedback_text, rating=rating)
     db.session.add(new_feedback)
@@ -126,6 +132,9 @@ def feedback():
         return redirect(url_for('login', error='Login to give feedback'))
 
     feedbacks = Feedback.query.all()
+    error = request.args.get('error')
+    if error is None:
+        error = ''
 
     details = []
 
@@ -138,7 +147,7 @@ def feedback():
             'feedback': f.feedback
         })
 
-    return render_template('Feedback.html', feedbacks=reversed(details))
+    return render_template('Feedback.html', feedbacks=reversed(details), error=error)
 
 
 @app.route('/games/<game>')
